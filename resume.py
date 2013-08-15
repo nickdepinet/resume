@@ -79,7 +79,7 @@ def myPageWrapper(contact):
             HEIGHT - (.4 * inch),
             contact['website'])  
         canvas.line(.4 * inch, HEIGHT - (.47 * inch), 
-					WIDTH - (.4 * inch), HEIGHT - (.47 * inch))
+            WIDTH - (.4 * inch), HEIGHT - (.47 * inch))
         canvas.drawString(
             .4 * inch,
             HEIGHT - (.6 * inch),
@@ -98,17 +98,24 @@ def myPageWrapper(contact):
 
 if __name__ == "__main__":
     contact = {
-                'name': 'Nicholas Depinet',
-                'website': 'http://github.com/nickdepinet/',
-                'email': 'depinetnick@gmail.com',
-                'address': '3092 Nathaniel Rochester Hall, Rochester, NY 14623',
-                'phone': '(614)365-1089'}
+        'name': 'Nicholas Depinet',
+        'website': 'http://github.com/nickdepinet/',
+        'email': 'depinetnick@gmail.com',
+        'address': '3092 Nathaniel Rochester Hall, Rochester, NY 14623',
+        'phone': '(614)365-1089'}
     data = {
-            'objective': ' '.join(['Seeking part time or co-operative employment',
-                            'in the field of software engineering.']),
-            'education': '<br/>'.join(['<b>Rochester Insitute of Technology</b>',
-                            '<b>B.S.</b> Computer Science',
-                            '<b>Expected Graduation</b> 2016']),}
-    tblData = [['OBJECTIVE', Paragraph(data['objective'], styles['Content'])],
-                ['EDUCATION', Paragraph(data['education'], styles['Content'])]]
+        'objective': ' '.join(['Seeking part time or co-operative employment',
+                    'in the field of software engineering.']),
+        'education': '<br/>'.join(['<b>Rochester Insitute of Technology</b>',
+                    '<b>B.S.</b>  Computer Science',
+                    '<b>Expected Graduation</b>  2016']),
+        'skills': '<br/>'.join(['<b>Languages</b>  Python, Java, PHP, Bash, jQuery, Haml/HTML, LESS/CSS',
+                    '<b>Tools</b>  Git/Mercurial, Vim, Django, Twisted, Autobahn, ReportLab',
+                    '<b>Platforms</b>  Debian, RHEL, OSX, Windows',
+                    '<b>Services</b>  MySQL, PostgreSQL, MongoDB, Apache/Nginx, HAProxy, Gunicorn']),}
+    tblData = [
+        ['OBJECTIVE', Paragraph(data['objective'], styles['Content'])],
+        ['EDUCATION', Paragraph(data['education'], styles['Content'])],
+        ['SKILLS', Paragraph(data['skills'], styles['Content'])]
+        ]
     generate_print_pdf(tblData, contact)
