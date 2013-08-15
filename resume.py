@@ -23,7 +23,8 @@ WIDTH = 8.5 * inch
 styles = getSampleStyleSheet()
 styles.add(ParagraphStyle(name='Content',
                           fontFamily='Inconsolata',
-                          fontSize=8))
+                          fontSize=8,
+                          spaceAfter=.1*inch))
                             
 
 
@@ -108,16 +109,60 @@ if __name__ == "__main__":
                     'in the field of software engineering or devops,',
                     'preferably working in python in an area related to',
                     'web infrastructure']),
+        'summary': ' '.join(['I love to use programming to solve interesting problems.',
+                    'I am also a huge proponent of python - I love to learn more about the language',
+                    'and exploit its quirks when I\'m solving problems&mdash;which is likely why I chose to',
+                    'create my resume in python rather than something more conventional like latex.',
+                    'My work and personal projects reflect my passion for python and my passion for solving problems.']),
         'education': '<br/>'.join(['<b>Rochester Insitute of Technology</b>',
                     '<b>B.S.</b>  Computer Science',
                     '<b>Expected Graduation</b>  2016']),
         'skills': '<br/>'.join(['<b>Languages</b>  Python, Java, PHP, Bash, jQuery, Haml/HTML, LESS/CSS',
                     '<b>Tools</b>  Git/Mercurial, Vim, Django, Twisted, Autobahn, ReportLab',
-                    '<b>Platforms</b>  Debian, RHEL, OSX, Windows',
-                    '<b>Services</b>  MySQL, PostgreSQL, MongoDB, Apache/Nginx, HAProxy, Gunicorn']),}
+                    '<b>Platforms</b>  Debian, RHEL, OSX, Windows, Cisco IOS',
+                    '<b>Services</b>  MySQL, PostgreSQL, MongoDB, Apache/Nginx, HAProxy, Gunicorn',
+                    '<b>Certifications</b>  Cisco Certified Network Associate (CCNA)']),
+        'experience': [''.join(['<b>STI-Healthcare</b> - Columbus, OH<br/>',
+                    '<alignment=TA_RIGHT>Software Engineering Intern: May - August 2013</alignment><br/>',
+                    'Developed a web application using Python and the Django framework ',
+                    'to allow hospitals to easily store, search, and retrieve archived medical records. ',
+                    'Primary Responsibility was the design and implementation of the metadata storage backend, ',
+                    'as well as the search functionality (backend and frontend).<br/>']),
+                    ''.join(['<b>Computer Science House</b> - Rochester, NY<br/>',
+                    'Drink Administrator: February 2013 - Present<br/>',
+                    'Responsible for managing the networked drink and snack machines at Computer Science House. ',
+                    'Duties include maintaining the hardware of the machines, including fixing things when they broke, ',
+                    'operating and maintaining the Node.JS Server, and maintaining the software used to run the system.<br/>']),
+                    ''.join(['<b>STI-Healthcare</b> - Columbus, OH<br/>',
+                    'Network & Server Administration Intern: May - August 2012<br/>',
+                    'Maintained a small business network consisting of windows and linux machines and servers. ',
+                    'Responsibilities included setting up VPN connections between the company and client hospitals, ',
+                    ' and configuring and maintaining linux virtual servers to be used for testing and development.']),
+                    ''.join(['<b>New Albany High School</b> - New Albany, OH<br/>',
+                    'Life Guard and Water Safety Instructor: June 2009 - May 2012<br/>',
+                    'Taught children ages 8-12 to swim, emphasizing safe water skills and overcoming their fears of the water. ',
+                    'As the only lifeguard on duty, I was responsible for ensuring the safety of all patrons of the pool<br/>'])],
+        'projects': [''.join(['<b>DrinkPi</b> - http://github.com/jeid64/drinkpi/<br/>',
+                    'Worked with a partner to replace a failing component in the Computer Science House drink machines. ',
+                    'The software controlling the machines was previously written in java and running on Dallas TINI microcomputers. ',
+                    'These TINI\'s were failing and were no longer produced, so we re-wrote the software in python to run on a ',
+                    'Raspberry Pi. The software talks to the drink server over sockets using the SUNDAY protocol, and to the drink ',
+                    'machine hardware using the 1-Wire protocol and a usb 1-Wire bus master.']),
+                    ''.join(['<b>IBM Master the Mainframe Competition</b><br/>',
+                    'I have been a part 2 competionist in IBM\'s yearly Master the Mainframe competetion every year I have competed ',
+                    'since 2008. In addition, in 2011 I was one of the first 100 competitors to finish part 2 of the competition, ',
+                    'and therefore was a part 2 winner for 2011. This contest has given me experience working with mainframes and the Job Control Language (JCL).']),
+                    ''.join(['<b>Project Euler</b> - http://github.com/nickdepinet/euler/<br/>',
+                    'In my free time I occasionally like to attempt Project Euler Challenges. ',
+                    'I like to use these challenges to further my knowledge of python, and ',
+                    'often attempt to solve them functionally or with as little code as possible. ',
+                    'I like to go nuts and see just what I can accomplish, and how fast I can get my solution to run.'])],}
     tblData = [
         ['OBJECTIVE', Paragraph(data['objective'], styles['Content'])],
+        ['SUMMARY', Paragraph(data['summary'], styles['Content'])],
         ['EDUCATION', Paragraph(data['education'], styles['Content'])],
-        ['SKILLS', Paragraph(data['skills'], styles['Content'])]
+        ['SKILLS', Paragraph(data['skills'], styles['Content'])],
+        ['EXPERIENCE', [Paragraph(x, styles['Content']) for x in data['experience']]],
+        ['PROJECTS', [Paragraph(x, styles['Content']) for x in data['projects']]]
         ]
     generate_print_pdf(tblData, contact)
