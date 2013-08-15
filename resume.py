@@ -105,7 +105,9 @@ if __name__ == "__main__":
         'phone': '(614)365-1089'}
     data = {
         'objective': ' '.join(['Seeking part time or co-operative employment',
-                    'in the field of software engineering.']),
+                    'in the field of software engineering or devops,',
+                    'preferably working in python in an area related to',
+                    'web infrastructure']),
         'education': '<br/>'.join(['<b>Rochester Insitute of Technology</b>',
                     '<b>B.S.</b>  Computer Science',
                     '<b>Expected Graduation</b>  2016']),
