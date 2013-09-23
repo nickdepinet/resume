@@ -105,10 +105,10 @@ if __name__ == "__main__":
         'address': '3092 Nathaniel Rochester Hall, Rochester, NY 14623',
         'phone': '(614)365-1089'}
     data = {
-        'objective': ' '.join(['Seeking part time or co-operative employment',
-                    'in the field of software engineering or devops,',
-                    'preferably working in python in an area related to',
-                    'web infrastructure']),
+        'objective': ' '.join(['Seeking co-operative employment',
+                    'in the field of software development or devops,',
+                    'preferably working in python and/or web infrastructure, ',
+                    'to start June 2014.']),
         'summary': ' '.join(['I love to use programming to solve interesting problems.',
                     'I am also a huge proponent of python - I love to learn more about the language',
                     'and exploit its quirks when I\'m solving problems&mdash;which is likely why I chose to',
