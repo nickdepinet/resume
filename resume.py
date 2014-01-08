@@ -160,7 +160,7 @@ if __name__ == "__main__":
                     'When the temperature exceeds a set limit, an email notification is sent. ',
                     'The software, including temperature reading, threading, and email notification is written in python.']),
                     ''.join(['<b>IBM Master the Mainframe Competition</b><br/>',
-                    'I have been a part 2 competionist in IBM\'s yearly Master the Mainframe competetion every year I have competed ',
+                    'I have been a part 2 completionist in IBM\'s yearly Master the Mainframe competetion every year I have competed ',
                     'since 2008. In addition, in 2011 I was one of the first 100 competitors to finish part 2 of the competition, ',
                     'and therefore was a part 2 winner for 2011. This contest has given me experience working with mainframes and the Job Control Language (JCL).'])],}
     tblData = [
