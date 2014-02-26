@@ -143,11 +143,7 @@ if __name__ == "__main__":
                     'Network & Server Administration Intern: May - August 2012<br/>',
                     'Maintained a small business network consisting of windows and linux machines and servers. ',
                     'Responsibilities included setting up VPN connections between the company and client hospitals, ',
-                    ' and configuring and maintaining linux virtual servers to be used for testing and development.']),
-                    ''.join(['<b>New Albany High School</b> - New Albany, OH<br/>',
-                    'Life Guard and Water Safety Instructor: June 2009 - May 2012<br/>',
-                    'Taught children ages 8-12 to swim, emphasizing safe water skills and overcoming their fears of the water. ',
-                    'As the only lifeguard on duty, I was responsible for ensuring the safety of all patrons of the pool<br/>'])],
+                    ' and configuring and maintaining linux virtual servers to be used for testing and development.'])],
         'projects': [''.join(['<b>Nexus Q Development</b> - http://github.com/nickdepinet/android_device_google_steelhead<br/>',
                     'Working to port CyanogenMod 11 to the Nexus Q. Part of a small team that maintains the existing android code for the nexus q, and implements new features.',
                     'We are working to fix all of the bugs found on the device to turn it into a viable media center machine. ',
@@ -166,7 +162,8 @@ if __name__ == "__main__":
                     ''.join(['<b>IBM Master the Mainframe Competition</b><br/>',
                     'I have been a part 2 completionist in IBM\'s yearly Master the Mainframe competetion every year I have competed ',
                     'since 2008. In addition, in 2011 I was one of the first 100 competitors to finish part 2 of the competition, ',
-                    'and therefore was a part 2 winner for 2011. This contest has given me experience working with mainframes and the Job Control Language (JCL).'])],}
+                    'and therefore was a part 2 winner for 2011. This contest has given me experience working with mainframes and the Job Control Language (JCL),'
+                    'in addition to giving me valuable experience solving problems within a time constraint.'])],}
     tblData = [
         ['OBJECTIVE', Paragraph(data['objective'], styles['Content'])],
         ['SUMMARY', Paragraph(data['summary'], styles['Content'])],
