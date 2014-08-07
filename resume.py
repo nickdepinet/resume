@@ -9,7 +9,7 @@ from reportlab.pdfgen import canvas
 from reportlab.pdfbase import pdfdoc
 from reportlab.pdfbase.pdfmetrics import registerFont, registerFontFamily
 from reportlab.pdfbase.ttfonts import TTFont
-
+from reportlab.lib.enums import TA_RIGHT
 # Import our font
 registerFont(TTFont('Inconsolata', 'fonts/Inconsolata-Regular.ttf'))
 registerFont(TTFont('InconsolataBold', 'fonts/Inconsolata-Bold.ttf'))
@@ -106,24 +106,27 @@ if __name__ == "__main__":
         'phone': '(614)365-1089'}
     data = {
         'objective': ' '.join(['Seeking co-operative employment',
-                    'in the field of software development or devops,',
-                    'preferably working in python and/or web infrastructure, ',
-                    'to start June 2014.']),
+                    'in the field of software development,',
+                    'preferably working in python and web backend infrastructure or distributed computing, ',
+                    'to start June 2015.']),
         'summary': ' '.join(['I love to use programming to solve interesting problems.',
-                    'I am also a huge proponent of python - I love to learn more about the language',
-                    'and exploit its quirks when I\'m solving problems&mdash;which is likely why I chose to',
-                    'create my resume in python rather than something more conventional like latex.',
-                    'My work and personal projects reflect my passion for python and my passion for solving problems.']),
+                    'I love working in Python (which is why I generated this resume in Python using ReportLab), but I am comfortable working in a variety of languages.',
+                    'I am currently exploring the exciting world of distributed and cloud computing, and love to discuss the unique opportunities this type of computing presents.']),
         'education': '<br/>'.join(['<b>Rochester Insitute of Technology</b>',
                     '<b>B.S.</b>  Computer Science',
                     '<b>Expected Graduation</b>  2016']),
-        'skills': '<br/>'.join(['<b>Languages</b>  Python, C, Java, PHP, Bash, jQuery, Haml/HTML, LESS/CSS',
+        'skills': '<br/>'.join(['<b>Languages</b>  Python, C, Java, MIPS Assembly, PHP, Bash, jQuery, Haml/HTML, LESS/CSS',
                     '<b>Tools</b>  Git/Mercurial, Vim, Django, Tornado, Twisted, Autobahn, ReportLab',
                     '<b>Platforms</b>  Debian, RHEL, OSX, Windows, Cisco IOS',
                     '<b>Services</b>  MySQL, PostgreSQL, MongoDB, Apache/Nginx, HAProxy, Gunicorn',
                     '<b>Certifications</b>  Cisco Certified Network Associate (CCNA)']),
-        'experience': [''.join(['<b>SpkrBar</b> - Columbus, OH<br/>',
-                    '<alignment=TA_RIGHT>Software Developer: September 2013 - December 2013</alignment><br/>',
+        'experience': [''.join(['<b>Nebula</b> - Seattle, WA<br/>',
+                    '<alignment=TA_RIGHT>Software Development Intern, Control Plane: June - August 2014</alignment><br/>',
+                    'Developed improvements to the initial installation experience of the Nebula One product. ',
+                    'In addition, researched technical feasibility of switching a storage backend from ZooKeeper to Cassandra. ',
+                    'Development done in python, using multiple frameworks and data structures.<br/>']),
+                    ''.join(['<b>SpkrBar</b> - Columbus, OH<br/>',
+                    '<alignment=TA_RIGHT>Software Developer: September - December 2013</alignment><br/>',
                     'Develop and maintain the front and backend of a startup website using Python and the Django framework. ',
                     'The website allows technical conferences, speakers, and attendees to connect and keep up to date. ',
                     'Primary Responsibilities include fixing bugs found in the website, implementing new features, and testing. ',
@@ -135,19 +138,14 @@ if __name__ == "__main__":
                     'Primary Responsibility was the design and implementation of the metadata storage backend, ',
                     'as well as the search functionality (backend and frontend).<br/>']),
                     ''.join(['<b>Computer Science House</b> - Rochester, NY<br/>',
-                    'Drink Administrator: February 2013 - Present<br/>',
-                    'Responsible for managing the networked drink and snack machines at Computer Science House. ',
-                    'Duties include maintaining the hardware of the machines, including fixing things when they broke, ',
-                    'operating and maintaining the Node.JS Server, and maintaining the software used to run the system.<br/>']),
+                    'Drink Administrator: February 2013 - Present<br/>',]),
                     ''.join(['<b>STI-Healthcare</b> - Columbus, OH<br/>',
-                    'Network & Server Administration Intern: May - August 2012<br/>',
-                    'Maintained a small business network consisting of windows and linux machines and servers. ',
-                    'Responsibilities included setting up VPN connections between the company and client hospitals, ',
-                    ' and configuring and maintaining linux virtual servers to be used for testing and development.'])],
-        'projects': [''.join(['<b>Nexus Q Development</b> - http://github.com/nickdepinet/android_device_google_steelhead<br/>',
-                    'Working to port CyanogenMod 11 to the Nexus Q. Part of a small team that maintains the existing android code for the nexus q, and implements new features.',
-                    'We are working to fix all of the bugs found on the device to turn it into a viable media center machine. ',
-                    'We have already implemented full control of the leds on the led ring of the device, and are working on support for the leapmotion.']),
+                    'Network & Server Administration Intern: May - August 2012<br/>',])],
+        'projects': [
+                    ''.join(['<b>g()(\'al\')</b> - http://github.com/eatnumber1/goal<br/>',
+                    'Completed the first python solution to the g()(\'al\') programming challenge. ',
+                    'The "goal" of the g()(\'al\') challenge is to enable the calling of g()(\'al\') in the source of the ',
+                    'language of choice with n ()\'s, and to be returned the string "goal" with the appropriate number of "o"s.']),
                     ''.join(['<b>DrinkPi</b> - http://github.com/jeid64/drinkpi/<br/>',
                     'Worked with a partner to replace a failing component in the Computer Science House drink machines. ',
                     'The software controlling the machines was previously written in java and running on Dallas TINI microcomputers. ',
@@ -159,11 +157,9 @@ if __name__ == "__main__":
                     'The system monitors temperature using a series of DSB1820 temperature sensors. ',
                     'When the temperature exceeds a set limit, an email notification is sent. ',
                     'The software, including temperature reading, threading, and email notification is written in python.']),
-                    ''.join(['<b>IBM Master the Mainframe Competition</b><br/>',
-                    'I have been a part 2 completionist in IBM\'s yearly Master the Mainframe competetion every year I have competed ',
-                    'since 2008. In addition, in 2011 I was one of the first 100 competitors to finish part 2 of the competition, ',
-                    'and therefore was a part 2 winner for 2011. This contest has given me experience working with mainframes and the Job Control Language (JCL),'
-                    'in addition to giving me valuable experience solving problems within a time constraint.'])],}
+                    ''.join(['<b>Nexus Q Development</b> - http://github.com/nickdepinet/android_device_google_steelhead<br/>',
+                    'Part of a small team working to keep the Nexus Q alive as a viable media device running Cyanogenmod 11.']),
+                    ''.join(['<b>IBM Master the Mainframe Competition</b><br/>'])],}
     tblData = [
         ['OBJECTIVE', Paragraph(data['objective'], styles['Content'])],
         ['SUMMARY', Paragraph(data['summary'], styles['Content'])],
